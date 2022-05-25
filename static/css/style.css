@@ -1,0 +1,102 @@
+.navbar-light {
+  color: #a2d5c6;
+  background-color: #1e847f;
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+}
+/* central */
+.fa {
+  padding: 70px;
+  font-size: 25px;
+  width: 50px;
+  }
+  .inputfield input{
+    margin-bottom: 10px;
+    }
+    .inputlabel label{
+      margin-bottom: 17px;
+      }.wrapper{
+        text-align: center;
+        padding-top: 8em;
+        font-size: 29px;
+      }
+/* Кнопка выпадающего списка */
+.dropbtn-a,
+.b {
+  display: inline-block;
+  width: 35px;
+  height: 5px;
+  background-color: #1e847f;
+  margin: 1px 0;
+}
+.dropbtn-a,
+.dropbtn-b {
+  float: left;
+  width: 35px;
+  height: 5px;
+  background-color: #1e847f;
+  margin: 1px 0;
+}
+.dropbtn-b {
+  clear: left;
+  width: 35px;
+  height: 5px;
+  background-color: #1e847f;
+  margin: 1px 0;
+}
+.c {
+  display: inline-block;
+  width: 35px;
+  height: 5px;
+  background-color: #1e847f;
+  margin: 1px 0;
+}
+.dropbtn-b,
+.dropbtn-c {
+  float: left;
+  width: 35px;
+  height: 5px;
+  background-color: #1e847f;
+  margin: 1px 0;
+}
+.dropbtn-c {
+  clear: left;
+  width: 35px;
+  height: 5px;
+  background-color: #1e847f;
+  margin: 1px 0;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #E0FFFF;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+  color: #1e847f;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Показать выпадающее меню при наведении курсора */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
