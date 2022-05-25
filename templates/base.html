@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Team</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link type="text/css" href="{{ url_for ('static', filename='css/style.css')}}" rel ="stylesheet"/>
+</head>
+<body>
+  <style>
+   body {background: #E0FFFF;color: #a2d5c6;width: 50%;border-radius: 5px; background-color: rgba(49, 149, 116, 0.8)}
+</style>
+  <div>
+    <nav class="navbar navbar-light">
+      <div class="col-sm-6">
+        <a class="navbar navbar-light" href="/">Team F</a>
+      </div>
+    <!-- Pages -->
+    <div class="dropdown">
+      <button class="dropbtn-a"></button>
+      <button class="dropbtn-b"></button>
+      <button class="dropbtn-c"></button>
+        <div class="dropdown-content">
+          <a href="#">Ссылка 1</a>
+          <a href="#">Ссылка 2</a>
+          <a href="#">Feedback</a>
+        </div>
+    </nav>
+  </div>
+  <!-- Basement -->
+  <div style="min-height: 70vh">
+    {% block content %}
+  <div class="wrapper">
+    <h2>Team F</h2>
+    <h4>Login and Register Project</h4>
+  </div>{% endblock %}</div>
+
+  <!-- Basement Color -->
+  <footer
+          class="text-center text-lg-start text-white"
+          style="color:#a2d5c6;background-color:#1e847f;border-radius:50px; -moz-border-radius:50px; -webkit-border-radius:50px;">
+
+  <!-- social networks -->
+     <section
+             class="d-flex justify-content-between p-4"
+             style="color:#a2d5c6;background-color:#1e847f;border-radius:50px; -moz-border-radius:50px; -webkit-border-radius:50px;">
+      <div class="me-5">
+        <span>Social networks:</span>
+      </div>
+      <div style="padding-right:50px;">
+        <a href="https://twitter.com/elonmusk" class="text-white me-4" style="margin-right:8px;"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.google.com/" class="text-white me-4" style="margin-right:8px;"><i class="fab fa-google"></i></a>
+        <a href="https://www.linkedin.com/in/ruslan-kirzhanov-915839221/" class="text-white me-4" style="margin-right:8px;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Escape198  " class="text-white me-4" style="margin-right:8px;"><i class="fab fa-github"></i></a>
+      </div>
+    </section>
+    <section class="">
+      <div class="container text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold">Team F</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 140px; background-color: #a2d5c6; height: 2px"/>
+                <p><i class="fa fa-car fa-2x"></i></p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-left">
+            <h6 class="text-uppercase fw-bold">Navigations</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 140px; background-color: #a2d5c6; height: 2px"/>
+                <div style="text-align:left;">
+                  <a href="/" class="text-white">Home</a><br>
+                  <a href="/" class="text-white">Some page</a><br>
+                  <a href="/" class="text-white">Some page</a><br>
+                  <a href="/" class="text-white">Some page</a><br>
+                </div>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-left" >
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 140px; background-color: #a2d5c6; height: 2px"/>
+                <div style="text-align:left;">
+                  <p><i class="fas fa-home mr-3"></i> Moscow, 119333, Russia</p>
+                  <p><i class="fas fa-envelope mr-3"></i> r.kirzhanov@albato.ru</p>
+                  <p><i class="fas fa-phone mr-3"></i> +7 999 8303814</p>
+                  <p><i class="fas fa-print mr-3"></i> +7 999 8303814</p>
+                </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.4)">
+      <a class="text-white" href="/"
+         <p style="text-align:left;">Terms of Reference 2022</p>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>
