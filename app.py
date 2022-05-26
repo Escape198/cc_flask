@@ -17,7 +17,7 @@ app.config.update(dict(DATABASE=os.path.join(app.root_path,'app.db')))
 
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
-login_manager.login_message = "Авторизуйтесь для доступа к закрытым страницам"
+login_manager.login_message = "Log in to access restricted pages"
 login_manager.login_message_category = "success"
 
 
@@ -33,7 +33,6 @@ def connect_db():
     return conn
 
 def create_db():
-    """Вспомогательная функция для создания таблиц БД"""
     db = connect_db()
     with app.open_resource('sq_db.sql', mode='r') as f:
         db.cursor().executescript(f.read())
@@ -41,7 +40,6 @@ def create_db():
     db.close()
 
 def get_db():
-    '''Соединение с БД, если оно еще не установлено'''
     if not hasattr(g, 'link_db'):
         g.link_db = connect_db()
     return g.link_db
@@ -50,7 +48,6 @@ def get_db():
 dbase = None
 @app.before_request
 def before_request():
-    """Установление соединения с БД перед выполнением запроса"""
     global dbase
     db = get_db()
     dbase = FDataBase(db)
@@ -58,7 +55,6 @@ def before_request():
 
 @app.teardown_appcontext
 def close_db(error):
-    '''Закрываем соединение с БД, если оно было установлено'''
     if hasattr(g, 'link_db'):
         g.link_db.close()
 
@@ -81,9 +77,9 @@ def login():
             login_user(userlogin, remember=rm)
             return redirect(request.args.get("next") or url_for("profile"))
 
-        flash("Неверная пара логин/пароль", "error")
+        flash("Invalid username/password", "error")
 
-    return render_template("login.html", menu=dbase.getMenu(), title="Авторизация")
+    return render_template("login.html", menu=dbase.getMenu())
 
 
 @app.route("/register", methods=["POST", "GET"])
@@ -94,28 +90,28 @@ def register():
             hash = generate_password_hash(request.form['psw'])
             res = dbase.addUser(request.form['name'], request.form['email'], hash)
             if res:
-                flash("Вы успешно зарегистрированы", "success")
+                flash("Registration successful", "success")
                 return redirect(url_for('login'))
             else:
-                flash("Ошибка при добавлении в БД", "error")
+                flash("Error adding to database", "error")
         else:
-            flash("Неверно заполнены поля", "error")
+            flash("Invalid parameters", "error")
 
-    return render_template("register.html", menu=dbase.getMenu(), title="Регистрация")
+    return render_template("register.html", menu=dbase.getMenu())
 
 
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
-    flash("Вы вышли из аккаунта", "success")
+    flash("You are logged out", "success")
     return redirect(url_for('login'))
 
 
 @app.route('/profile')
 @login_required
 def profile():
-    return f"""<p><a href="{url_for('logout')}">Выйти из профиля</a>
+    return f"""<p><a href="{url_for('logout')}">Sign out</a>
                 <p>user info: {current_user.get_id()}"""
 
 
