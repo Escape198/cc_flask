@@ -1,5 +1,19 @@
 ***
 ## Task description 🍪
+>Authorization and registration via Flask Login + Redirect.
+>
+>The index.html should be a form with inputs. 
+>
+>Post request must send the inputs to the back end and store them in database (sqlite)
+
+
+Requirements:
+
+>Technology stack: Flask, Sqlalchemy, Python, jinja2
+>
+>The program must run on a local host
+>
+>database - sqlite
 ***
 ## Basic run 🍪
 Create a virtual environment
