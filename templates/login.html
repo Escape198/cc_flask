@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+<form action="" method='post' class="decor">
+<div class="form-left-decoration"></div>
+<div class="form-right-decoration"></div>
+<div class="circle"></div>
+<div class="form-inner">
+<h3>Sign in to your account</h3>
+<input type="email" placeholder="Name" name = 'email' value='' requied />
+<input type="password" placeholder="Password" name = 'psw' value='' requied />
+<input type="submit" value="Sign in">
+</div>
+</form>
+{% endblock %}
