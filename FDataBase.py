@@ -16,7 +16,7 @@ class FDataBase:
             res = self.__cur.fetchall()
             if res: return res
         except:
-            print("Ошибка чтения из БД")
+            print("Error reading from DB")
         return []
 
 
@@ -25,14 +25,14 @@ class FDataBase:
             self.__cur.execute(f"SELECT COUNT() as `count` FROM users WHERE email LIKE '{email}'")
             res = self.__cur.fetchone()
             if res['count'] > 0:
-                print("Пользователь с таким email уже существует")
+                print("User with this email already exists")
                 return False
 
             tm = math.floor(time.time())
             self.__cur.execute("INSERT INTO users VALUES(NULL, ?, ?, ?, ?)", (name, email, hpsw, tm))
             self.__db.commit()
         except sqlite3.Error as e:
-            print("Ошибка добавления пользователя в БД "+str(e))
+            print("Error adding user to database "+str(e))
             return False
 
         return True
@@ -42,12 +42,12 @@ class FDataBase:
             self.__cur.execute(f"SELECT * FROM users WHERE id = {user_id} LIMIT 1")
             res = self.__cur.fetchone()
             if not res:
-                print("Пользователь не найден")
+                print("User is not found")
                 return False
 
             return res
         except sqlite3.Error as e:
-            print("Ошибка получения данных из БД "+str(e))
+            print("Error getting data from database "+str(e))
 
         return False
 
@@ -56,11 +56,11 @@ class FDataBase:
             self.__cur.execute(f"SELECT * FROM users WHERE email = '{email}' LIMIT 1")
             res = self.__cur.fetchone()
             if not res:
-                print("Пользователь не найден")
+                print("User is not found")
                 return False
 
             return res
         except sqlite3.Error as e:
-            print("Ошибка получения данных из БД "+str(e))
+            print("Error getting data from database "+str(e))
 
         return False
