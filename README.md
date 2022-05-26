@@ -25,7 +25,7 @@ Starting the server
 ## Tips 🍪
 ***
 ## API 🍪 (In progress)
--     /basic_skill || POST
+-     /login || POST / GET
       Some text
 >      
 >      Parameters:                         Response:
